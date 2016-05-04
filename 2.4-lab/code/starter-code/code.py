@@ -18,11 +18,14 @@ for item in features:
     df2[item]=df[item]
 
 #splitting training and test data
-train, test = tts(df2, test_size=.8, train_size=.2)
+train, test = tts(df2, train_size=.8)
 train_x=train.drop('high_quality', axis=1)
 train_y=train['high_quality']
 test_x=test.drop('high_quality', axis=1)
 test_y=test['high_quality']
+
+len(train_x)
+len(test_x)
 
 results=[]
 for n in range(1,51):
